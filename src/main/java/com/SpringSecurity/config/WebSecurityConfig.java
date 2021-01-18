@@ -28,7 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests() 
 		.mvcMatchers("/api/**","/saveUser").hasRole("ADMIN")
-		 .mvcMatchers("/","/login","/logout").permitAll().anyRequest().denyAll().and().csrf().disable().logout();
+		 .mvcMatchers("/","/**","/login","/logout").permitAll().anyRequest().denyAll().and().csrf().disable().logout();
 		 
 		 
 	}
